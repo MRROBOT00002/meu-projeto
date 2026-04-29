@@ -1,0 +1,171 @@
+========================================
+AVALIAÇÃO CORE + SO LINUX - HANDSON
+========================================
+
+========================
+BLOCO 1 - CORE (3 VMS)
+========================
+
+1.1 - Oracle Linux 9 (instalação e atualização)
+		- Instalação realizada com Oracle Linux 9 nas VMs sem as atualização completa dos pacotes via dnf update, por motivos das VMs não ficarem com o arquivo muito grande para a exportações, porem, nao teria nenhum impeditivo de realizar via script.
+
+NOTA: 4
+
+1.2 - Particionamento de disco
+		- Particionamento configurado conforme especificação (/boot, /, /tmp e swap), respeitando tamanhos definidos e boas práticas de separação.
+
+NOTA: 4
+
+1.3 - Configuração de rede
+		- Rede configurada em 192.168.51.0/27 permitindo comunicação entre vm01, vm02, vm03 e vm21.
+
+NOTA: 4
+
+1.4 - Usuários, grupos e SSH hardening
+		- rupo "remoto" criado e SSH configurado para permitir acesso apenas de usuários pertencentes ao grupo. Root mantido com acesso via chave SSH.
+
+NOTA: 4
+
+1.5 - Failover unicast (Keepalived)
+		- Implementado IP virtual 192.168.51.10 com failover entre vm01, vm02 e vm03 utilizando Keepalived em modo unicast.
+
+NOTA: 4
+
+1.6 - Nginx via DNF
+		- Nginx instalado via DNF com systemd, rodando na porta 81, com logs customizados e página "OLÁ MUNDO via DNF" no domínio avaliacaocore.maya.local.
+
+NOTA: 4
+
+1.7 - Git distribuído (3 VMs + GitHub)
+		- Implementado Git distribuído com integração via SSH no GitHub.
+
+		Inclui:
+		- clone do repositório nas VMs
+		- configuração de SSH keys
+		- commits independentes por VM
+		- criação de branches
+		- merge para main
+		- resolução de conflitos (main/master)
+		- sincronização via pull --rebase
+		- remoção de branches
+
+NOTA: 4
+
+1.8 - Script SNMP (vm01)
+		- Coleta de métricas (CPU, memória, disco, load) das VMs com armazenamento em /var/log/teste-snmp.log.
+
+NOTA: 4
+
+1.9 - Script troubleshooting (todas VMs)
+		- Coleta periódica de métricas de sistema (context switch, IO, processos, validação HTTP) a cada 5 minutos.
+
+NOTA: 4
+
+1.10 - Monitoramento de rede (vm01)
+		- Coleta de tráfego RX/TX das VMs com registro em /var/log/rede.log a cada 5 segundos.
+
+NOTA: 4
+
+1.11 - Rotação de logs
+		- Configuração de logrotate com compressão gzip e retenção de 27 dias para logs de sistema customizados.
+
+NOTA: 4
+
+1.12 - Sniffer de rede (vm01)
+		- Captura de tráfego HTTP via tcpdump com geração de arquivo .cap e documentação do comando utilizado.
+
+Inclui vídeo demonstrativo.
+
+NOTA: 5
+
+1.13 - Aplicação Java (vm02)
+		- Aplicação Java executando na porta 9090 com 384MB de memória, retornando "Hello World".
+
+NOTA: 4
+
+1.14 - Iptables (vm03)
+		- Firewall configurado com regras stateful e stateless:
+			- HTTP/HTTPS/FTP permitido
+			- SSH bloqueado
+
+		- Inclui vídeo demonstrativo.
+
+NOTA: 4
+
+1.15 - Entrega OVA (plug and play)
+		- Ambiente validado com exportação OVA funcional, iniciando automaticamente todos os serviços.
+
+NOTA: 4
+
+========================
+BLOCO 2 - SO LINUX (VM ÚNICA)
+========================
+
+2.1 - Oracle Linux 9
+		- Instalação completa com sistema atualizado e pronto para operação.
+
+NOTA: 4
+
+2.2 - Particionamento avançado
+		- Configuração com /boot, /, /tmp, /data e swap conforme especificação.
+
+NOTA: 4
+
+2.3 - Rede vm21
+		- Configuração IP estático 192.168.51.21/27 integrado à rede do ambiente.
+
+NOTA: 4
+
+2.4 - Hardening de segurança
+		- Aplicadas configurações de segurança e performance voltadas para PostgreSQL.
+
+NOTA: 4
+
+2.5 - PostgreSQL via Ansible
+		- Deploy automatizado via Ansible com armazenamento em /data/pgsql e tuning de performance.
+
+NOTA: 4
+
+2.6 - Troubleshooting CPU
+		- Simulação de carga e identificação de processos consumidores de CPU.
+
+NOTA: 4
+
+2.7 - Troubleshooting memória
+		- Simulação de consumo de memória e análise de processos responsáveis.
+
+NOTA: 4
+
+2.8 - Troubleshooting IO
+		- Geração de carga de IO e identificação de processos críticos.
+
+NOTA: 4
+
+2.9 - Troubleshooting arquivos
+		- Script de escrita massiva com análise de PID responsável por IO elevado.
+
+NOTA: 4
+
+2.10 - Análise de logs Nginx
+		Análise de logs HTTP identificando:
+		- métodos HTTP
+		- erros 4xx e 5xx
+		- tentativas de ataque (path traversal, brute force)
+		- padrões suspeitos de segurança
+
+NOTA: 4
+
+2.11 - Permissionamento Linux
+		- Vídeo explicando chmod, chown e controle de permissões no Linux.
+
+NOTA: 5
+
+2.12 - Systemd
+		- Vídeo explicando funcionamento de serviços e gerenciamento via systemd.
+
+NOTA: 5
+
+2.13 - Entrega final OVA
+		- Validação de ambiente pronto para boot automático sem intervenção manual.
+
+NOTA: 4
